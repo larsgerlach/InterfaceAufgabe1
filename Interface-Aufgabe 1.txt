@@ -1,0 +1,48 @@
+Jetzt wird es Zeit, Interfaces zu behandeln, zumindest die Grundlagen.
+
+
+Wir benötigen zuerst drei leere Klassen: Nennen wir sie
+	- Chips
+	- Pizza
+	- Schokolade
+
+Dazu ein Interface namens
+	- Essbar
+
+Und eine weitere Klasse
+	- Hunger
+
+mit der main-Methode als Inhalt.
+
+
+Das Interface Essbar soll eine Methode enthalten:
+	- essen()
+
+
+Chips, Pizza und Schokolade sollen allesamt Essbar implementieren (nach dem Schema: X implements X).
+Das ist eine Form der Polymorphie bzw. Vererbung. Alle Klassen, die Essbar implementieren, werden gezwungen, die Methode essen()
+zu besitzen, ansonsten beschwert sich der Compiler.
+Stell dir ein Interface wie ein Adjektiv vor, das beschreibt, was ein Objekt können muss. Wie es das kann, ist ihm selbst überlassen.
+Vögel und Flugzeuge könnten also beispielsweise beide das Interface "KannFliegen" mit der Methode "fliegen()" implementieren, auch wenn 
+sie völlig unterschiedliche Flugmethoden verwenden: Bei einem Vogel würde die Methode "fliegen()" Flügelschlagen bedeuten, beim Flugzeug 
+eher "Motor starten".
+
+
+Baue also für jede der essbaren Klassen eine spezielle Methode "essen()". Es reicht, wenn der output aus 
+	- System.out.println("Pizza wurde gegessen);
+oder eben vergleichbaren Inhalten besteht, hauptsache, die einzelnen Implemetierungen unterscheiden sich von Klasse zu Klasse im 
+ausgegebenen Text, um die Methoden auseinanderhalten zu können.
+
+
+
+Interfaces haben die Eigenschaft, dass man sie wie eine Oberklasse zwar als Datentyp verwenden, allerdings nicht selbst instanziieren kann. 
+Während du in der letzten Aufgabe schreiben konntest "Auto auto1 = new Auto()" und die Oberklasse selbst als Object nutzen konntest, kann 
+ein Interface, das im Grunde auch eine vereinfachte Oberklasse ist (vgl. Mehrfachvererbung), nicht selbst instanziiert werden.
+"Essbar kuchen = new Kuchen()" würde also nicht funktionieren.
+"Essbar pizza = new Pizza()" funktioniert hingegen schon, und man hat Zugriff auf alle Methoden, die das Interface besitzt, aber nicht auf
+Klasseneigene.
+
+Instanziiere in der main-methode zu übungszwecken 3 "Essbar"-Objekte aus den verschiedenen Unterklassen und probiere die "essen()"-Methode
+aus.
+
+Das wars schon.
